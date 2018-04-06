@@ -1,5 +1,5 @@
 # sudoku
-The project is used to build one sudoku game with Javascript Native, JQuery, Vue, Express and Node.
+The project is used to build one sudoku game with native Javascript, JQuery, Vue, Express and Node.
 
 At first step, I will set up the game with native Javascript, express and node.
 Then, I will use the JQuery to replace the Native Javascript.
