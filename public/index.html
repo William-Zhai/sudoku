@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="./css/initial.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body id="sudoku">
+	<div id="container">
+		<a href="#" class="menu-trigger"></a>
+		<div class="indicator hide">
+			<img src="./image/indicator.gif" />
+		</div>
+		<div class="menu hide">
+			<div class="widget normal">
+				<a href="#" class="close-trigger"></a>
+				<h2 class="header">Welcome</h2>
+				<div class="content">
+					<div class="copy">To start a new game, select one diffuculty mode first.</div>
+					<div class="selectors" data-property="diffuculty">
+						<a href="#" class="selector" data-value="easy">
+							Easy
+						</a>
+						<a href="#" class="selector" data-value="medium">
+							Medium
+						</a>
+						<a href="#" class="selector" data-value="difficulty">
+							Difficulty
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="board" id="board">
+			<div class="row" id="row1">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>
+			<div class="row" id="row2">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>
+			<div class="row" id="row3">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>
+			<div class="row" id="row4">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>
+			<div class="row" id="row5">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>
+			<div class="row" id="row6">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>
+			<div class="row" id="row7">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>
+			<div class="row" id="row8">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>
+			<div class="row" id="row9">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>
+		</div>
+
+		<div class="legend">
+			<div class="row">
+				<div class="cell">1</div>
+				<div class="cell">2</div>
+				<div class="cell">3</div>
+				<div class="cell">4</div>
+				<div class="cell">5</div>
+				<div class="cell">6</div>
+				<div class="cell">7</div>
+				<div class="cell">8</div>
+				<div class="cell">9</div>
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript" src="./js/index.js"></script>
+</body>
+</html>

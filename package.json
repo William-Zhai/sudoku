@@ -1,0 +1,19 @@
+{
+  "name": "sudoku",
+  "version": "1.0.0",
+  "description": "first try for sudoku via nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sudoku",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "William Zhai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
