@@ -1,31 +1,48 @@
 var express = require("express");
 var app = express();
 
+var bodyParser = require('body-parser');
+var urlEncodeParser = bodyParser.urlencoded({ extended: true });
+
 var sudoku = require("./public/js/sudoku");
 
-var bodyParser = require('body-parser');
-var urlEncodeParser = bodyParser.urlencoded({ extended:false });
+/*
+  for application/json
+*/
+app.use(bodyParser.json());
+/*
+  for application/x-www-form-urlencoded
+*/
+app.use(bodyParser.urlencoded({ extended: true }))
 
+/*
+  use the express.static to set the static folder
+*/
 app.use(express.static('public'));
 
-app.get("/", function(req, res){
-  res.sendFile(__dirname + "/" + index.html);
+
+/*
+  handle the index.html 
+*/
+app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/" + index.html);
 });
 
-app.post("/generate_sudoku", urlEncodeParser, function(req, res){
+/*
+  handle the post request for new sudoku
+*/
+app.post("/generate_sudoku", function(req, res) {
     var response = {
         "difficulty": req.body.difficulty
-    }
-
+    };
     var newPuzzle = sudoku.generatePuzzle(req.body.difficulty);
-    console.log(newPuzzle);
     res.send(JSON.stringify(newPuzzle));
     res.end();
 });
 
-var server = app.listen(8080, function(req, res){
-  var host = server.address().address;
-  var port = server.address().port;
+var server = app.listen(8080, function(req, res) {
+    var host = server.address().address;
+    var port = server.address().port;
 
-  console.log("The url is http://%s:%s", host, port);
+    console.log("The url is http://%s:%s", host, port);
 })
