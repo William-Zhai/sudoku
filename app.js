@@ -35,8 +35,10 @@ app.post("/generate_sudoku", function(req, res) {
     var response = {
         "difficulty": req.body.difficulty
     };
-    var newPuzzle = sudoku.generatePuzzle(req.body.difficulty);
-    res.send(JSON.stringify(newPuzzle));
+    // var newPuzzle = sudoku.generatePuzzle(req.body.difficulty);
+    var newPuzzle = new sudoku(req.body.difficulty);
+    newPuzzle.generatePuzzle();
+    res.send(JSON.stringify(newPuzzle.getSudokuInfo()));
     res.end();
 });
 

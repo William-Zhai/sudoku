@@ -1,5 +1,7 @@
 var sudoku = document.getElementById("sudoku");
 
+var solutionArray = [];
+
 /*
 	body catches all the click events
 */
@@ -108,12 +110,92 @@ function handleSuccess(data) {
 
     var vData = JSON.parse(data);
 
-    for (var i = 0, len = cellArr.length - 9; i < len; i++) {
-        cellArr[i].innerHTML = vData[i];
-        if (typeof vData[i] === "number") {
-            cellArr[i].className = "cell solved";
-        } else {
-            cellArr[i].className = "cell empty";
+    var puzzle = vData.puzzle;
+    solutionArray = vData.solution;
+
+    // for (var i = 0, len = cellArr.length - 9; i < len; i++) {
+    // 	cellArr[i].innerHTML = puzzle[i];
+    // 	if (typeof puzzle[i] === "number") {
+    //         cellArr[i].className = "cell solved";
+    //     } else {
+    //         cellArr[i].className = "cell empty";
+    //     }
+    // }
+
+    for (var i = 0; i < puzzle.length - 1; i++) {
+        var val = i % 27;
+        // 1~3
+        if (val < 3) {
+            cellArr[i].innerHTML = puzzle[i];
+            if (typeof puzzle[i] === "number") {
+                cellArr[i].className = "cell solved";
+            } else {
+                cellArr[i].className = "cell empty";
+            }
+        } else if (val < 6) {
+            //4~6
+            cellArr[i + 6].innerHTML = puzzle[i];
+            if (typeof puzzle[i] === "number") {
+                cellArr[i + 6].className = "cell solved";
+            } else {
+                cellArr[i + 6].className = "cell empty";
+            }
+        } else if (val < 9) {
+            //7~9
+            cellArr[i + 12].innerHTML = puzzle[i];
+            if (typeof puzzle[i] === "number") {
+                cellArr[i + 12].className = "cell solved";
+            } else {
+                cellArr[i + 12].className = "cell empty";
+            }
+        } else if (val < 12) {
+            //10~12
+            cellArr[i - 6].innerHTML = puzzle[i];
+            if (typeof puzzle[i] === "number") {
+                cellArr[i - 6].className = "cell solved";
+            } else {
+                cellArr[i - 6].className = "cell empty";
+            }
+        } else if (val < 15) {
+            //13~15
+            cellArr[i].innerHTML = puzzle[i];
+            if (typeof puzzle[i] === "number") {
+                cellArr[i].className = "cell solved";
+            } else {
+                cellArr[i].className = "cell empty";
+            }
+        } else if (val < 18) {
+            // 16~18
+            cellArr[i + 6].innerHTML = puzzle[i];
+            if (typeof puzzle[i] === "number") {
+                cellArr[i + 6].className = "cell solved";
+            } else {
+                cellArr[i + 6].className = "cell empty";
+            }
+        } else if (val < 21) {
+            //19~21
+            cellArr[i - 12].innerHTML = puzzle[i];
+            if (typeof puzzle[i] === "number") {
+                cellArr[i - 12].className = "cell solved";
+            } else {
+                cellArr[i - 12].className = "cell empty";
+            }
+        } else if (val < 24) {
+            //22~24
+            cellArr[i - 6].innerHTML = puzzle[i];
+            if (typeof puzzle[i] === "number") {
+                cellArr[i - 6].className = "cell solved";
+            } else {
+                cellArr[i - 6].className = "cell empty";
+            }
+        } else if (val < 27) {
+            //25~27
+            cellArr[i].innerHTML = puzzle[i];
+            if (typeof puzzle[i] === "number") {
+                cellArr[i].className = "cell solved";
+            } else {
+                cellArr[i].className = "cell empty";
+            }
         }
     }
 
