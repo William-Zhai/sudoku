@@ -84,7 +84,10 @@ sudoku.onkeyup = function(ev) {
 
     var parentNode = target.parentNode;
 
-    if (!target.value) return;
+    if (target.value != parentNode["data-value"]) {
+        target.value = null;
+        return;
+    }
     parentNode.innerHTML = target.value;
     parentNode.className = "cell solved";
 };
@@ -113,15 +116,6 @@ function handleSuccess(data) {
     var puzzle = vData.puzzle;
     solutionArray = vData.solution;
 
-    // for (var i = 0, len = cellArr.length - 9; i < len; i++) {
-    // 	cellArr[i].innerHTML = puzzle[i];
-    // 	if (typeof puzzle[i] === "number") {
-    //         cellArr[i].className = "cell solved";
-    //     } else {
-    //         cellArr[i].className = "cell empty";
-    //     }
-    // }
-
     for (var i = 0; i < puzzle.length - 1; i++) {
         var val = i % 27;
         // 1~3
@@ -131,6 +125,7 @@ function handleSuccess(data) {
                 cellArr[i].className = "cell solved";
             } else {
                 cellArr[i].className = "cell empty";
+                cellArr[i]["data-value"] = solutionArray[i];
             }
         } else if (val < 6) {
             //4~6
@@ -139,6 +134,7 @@ function handleSuccess(data) {
                 cellArr[i + 6].className = "cell solved";
             } else {
                 cellArr[i + 6].className = "cell empty";
+                cellArr[i + 6]["data-value"] = solutionArray[i];
             }
         } else if (val < 9) {
             //7~9
@@ -147,6 +143,7 @@ function handleSuccess(data) {
                 cellArr[i + 12].className = "cell solved";
             } else {
                 cellArr[i + 12].className = "cell empty";
+                cellArr[i + 12]["data-value"] = solutionArray[i];
             }
         } else if (val < 12) {
             //10~12
@@ -155,6 +152,7 @@ function handleSuccess(data) {
                 cellArr[i - 6].className = "cell solved";
             } else {
                 cellArr[i - 6].className = "cell empty";
+                cellArr[i - 6]["data-value"] = solutionArray[i];
             }
         } else if (val < 15) {
             //13~15
@@ -163,6 +161,7 @@ function handleSuccess(data) {
                 cellArr[i].className = "cell solved";
             } else {
                 cellArr[i].className = "cell empty";
+                cellArr[i]["data-value"] = solutionArray[i];
             }
         } else if (val < 18) {
             // 16~18
@@ -171,6 +170,7 @@ function handleSuccess(data) {
                 cellArr[i + 6].className = "cell solved";
             } else {
                 cellArr[i + 6].className = "cell empty";
+                cellArr[i + 6]["data-value"] = solutionArray[i];
             }
         } else if (val < 21) {
             //19~21
@@ -179,6 +179,7 @@ function handleSuccess(data) {
                 cellArr[i - 12].className = "cell solved";
             } else {
                 cellArr[i - 12].className = "cell empty";
+                cellArr[i - 12]["data-value"] = solutionArray[i];
             }
         } else if (val < 24) {
             //22~24
@@ -187,6 +188,7 @@ function handleSuccess(data) {
                 cellArr[i - 6].className = "cell solved";
             } else {
                 cellArr[i - 6].className = "cell empty";
+                cellArr[i - 6]["data-value"] = solutionArray[i];
             }
         } else if (val < 27) {
             //25~27
@@ -195,6 +197,7 @@ function handleSuccess(data) {
                 cellArr[i].className = "cell solved";
             } else {
                 cellArr[i].className = "cell empty";
+                cellArr[i]["data-value"] = solutionArray[i];
             }
         }
     }
