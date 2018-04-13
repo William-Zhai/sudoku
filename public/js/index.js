@@ -49,7 +49,6 @@ sudoku.onclick = function(ev) {
 
         XHR.open("post", "/generate_sudoku", true);
         XHR.setRequestHeader('Content-Type', 'application/json');
-        // XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         XHR.onreadystatechange = function() {
             if (XHR.readyState === XMLHttpRequest.DONE) {
                 if (XHR.status === 200) {
